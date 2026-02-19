@@ -17,7 +17,7 @@ def get_pdf_text(uploaded_file):
 def generate_cover_letter(api_key, job_text, cv_text, user_name):
     # Gemini Konfiguration
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.5-flash')
 
     # Der Prompt (Die Anweisung an die KI)
     prompt = f"""
@@ -86,3 +86,4 @@ if st.button("Anschreiben generieren ✨", type="primary"):
                 st.balloons()
             except Exception as e:
                 st.error(f"Fehler: {e}")
+
